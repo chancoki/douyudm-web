@@ -1,0 +1,126 @@
+body {
+  transition: all 0.7s;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.list {
+  padding: 0 5px;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-color: rgba(198, 198, 198, 0.1) rgba(255, 255, 255, 0);
+  scrollbar-width: thin;
+}
+.duoyu {
+  margin: 10px 0;
+}
+.duoyu > div {
+  display: inline;
+  min-width: 10px;
+}
+.duoyu .danm,
+.duoyu .level {
+  margin-right: 3px;
+  border-radius: 3px;
+  text-align: center;
+  color: aliceblue;
+  box-sizing: border-box;
+  padding: 0 3px;
+  user-select: none;
+}
+.duoyu div.level {
+  display: inline-block;
+  min-width: 38px;
+}
+.duoyu .danm {
+  padding: 1px 3px;
+  text-decoration: none;
+}
+.duoyu .user {
+  color: #E75B23;
+}
+.duoyu .text {
+  padding: 1px 3px;
+  border-radius: 3px;
+  line-height: 22px;
+}
+.msg {
+  position: fixed;
+  bottom: 20px;
+  height: 20px;
+  padding: 0 12px;
+  min-width: 100px;
+  left: 50%;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: #e75924;
+  color: aliceblue;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+  display: none;
+}
+.msg:hover {
+  opacity: 1;
+}
+.bt {
+  z-index: 9999;
+  opacity: 0.07;
+  height: 40px;
+  width: 22px;
+  position: fixed;
+  top: 20px;
+  right: 0;
+  border-radius: 2px 0 0 2px;
+  outline: none;
+  border: none;
+  background-color: #e75924;
+  color: aliceblue;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.bt:hover {
+  opacity: 1;
+}
+.cut {
+  top: 65px;
+}
+.cut {
+  top: 65px;
+}
+.add{
+  top: 110px;
+  height: 22px;
+}
+.sub{
+    top: 137px;
+    height: 22px;
+}
+.room {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7rem;
+  opacity: 0.03;
+  color: #777;
+  display: none;
+  user-select: none;
+  z-index: -1;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(198, 198, 198, 0.1);
+  backdrop-filter: saturate(180%) blur(20px);
+}
