@@ -39,8 +39,8 @@ window.onload = function () {
     document.body.style.background = light ? LIGHT_BG : DARK_BG;
     cutBtn.innerText = light ? "关灯" : "开灯";
     window.localStorage.setItem(
-        "ligth",
-        JSON.stringify({ color: light ? LIGHT_BG : DARK_BG, title: cutBtn.innerText })
+      "ligth",
+      JSON.stringify({ color: light ? LIGHT_BG : DARK_BG, title: cutBtn.innerText })
     );
     isLight = light;
   }
@@ -52,18 +52,19 @@ window.onload = function () {
 
   // 获取直播间号
   const id = getLocal("id");
-    if (!id) {
-        const rid = prompt("请输入直播间号");
-        if (rid) {
-        window.localStorage.setItem("id", rid);
-        location.reload();
-        } else {
-        alert("直播间号不能为空");
-        return;
-        }
+  if (!id) {
+    const rid = prompt("请输入直播间号");
+    if (rid) {
+      window.localStorage.setItem("id", rid);
+      location.reload();
+    } else {
+      alert("直播间号不能为空");
+      return;
     }
+  } else {
+    window.localStorage.setItem("id", id);
+  }
 
-  window.localStorage.setItem("id", id);
   document.title = id + "_直播间";
 
   // 弹幕对象初始化
@@ -170,15 +171,13 @@ window.onload = function () {
     scrollTime();
     let html = `
       <div class="level" style="border: 1px solid ${levelColor(res.level)}; color: ${levelColor(res.level)}"><i>lv.</i>${res.level < 10 ? "0" + res.level : res.level}</div>
-      ${
-        res.bl == 0 || res.bl == "" || !res.bl
-            ? ""
-            : `<a href='https://www.douyu.com/${res.brid}' target='blank' class="danm" style="background:${blColor(res.bl)};">${res.bl}·${res.bnn}</a>`
-    }
+      ${res.bl == 0 || res.bl == "" || !res.bl
+        ? ""
+        : `<a href='https://www.douyu.com/${res.brid}' target='blank' class="danm" style="background:${blColor(res.bl)};">${res.bl}·${res.bnn}</a>`
+      }
       <div class="user">${res.txt ? res.nn + ":" : res.nn}</div>
-      <div class="text" style="color:${color(res.brid, res.nl, res.bl, res.txt)};${
-        res.txt && res.nl < 7 && res.nl > 2 ? "background-color:" + nobilityColor(res.nl) : ""
-    };">${res.txt ? res.txt : "欢迎来到本直播间"}</div>
+      <div class="text" style="color:${color(res.brid, res.nl, res.bl, res.txt)};${res.txt && res.nl < 7 && res.nl > 2 ? "background-color:" + nobilityColor(res.nl) : ""
+      };">${res.txt ? res.txt : "欢迎来到本直播间"}</div>
     `;
     appendMsg(html);
   }
